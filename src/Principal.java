@@ -3,14 +3,15 @@ import com.alura.screenmatch.calculos.FiltroRecomendacion;
 import com.alura.screenmatch.modelos.Episodio;
 import com.alura.screenmatch.modelos.Pelicula;
 import com.alura.screenmatch.modelos.Serie;
+import com.alura.screenmatch.herramientas.LimpiarConsola;
 
 import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        Pelicula miPelicula = new Pelicula();
-        miPelicula.setNombre("Encanto");
-        miPelicula.setFechaDeLanzamiento(2021);
+        LimpiarConsola clean = new LimpiarConsola();
+        clean.start();
+        Pelicula miPelicula = new Pelicula("Encanto",2001);
         miPelicula.setDuracionEnMinutos(180);
         System.out.println("Duración de la película: " + miPelicula.getDuracionEnMinutos());
 
@@ -21,19 +22,14 @@ public class Principal {
         System.out.println("Total de evaluaciones: " + miPelicula.getTotalDeEvaluaciones());
         System.out.println(miPelicula.calculaMediaEvaluaciones());
 
-
-        Serie lost = new Serie();
-        lost.setNombre("Lost");
-        lost.setFechaDeLanzamiento(2000);
+        Serie lost = new Serie("Lost",2000);
         lost.muestraFichaTecnica();
         lost.setTemporadas(10);
         lost.setEpisodiosPorTemporada(10);
         lost.setMinutosPorEpisodio(50);
         System.out.println("Duracion de la série: " + lost.getDuracionEnMinutos());
 
-        Pelicula otraPelicula = new Pelicula();
-        otraPelicula.setNombre("Avatar");
-        otraPelicula.setFechaDeLanzamiento(2023);
+        Pelicula otraPelicula = new Pelicula("Avatar",2003);
         otraPelicula.setDuracionEnMinutos(200);
 
         CalculadoraDeTiempo calculadora = new CalculadoraDeTiempo();
@@ -50,11 +46,20 @@ public class Principal {
         episodio.setSerie(lost);
         episodio.setTotalVisualizaciones(300);
         filtro.filtra(episodio);
-
-        var peliculaDeBruno = new Pelicula();
-        peliculaDeBruno.setNombre("El señor de los anillos");
+        /*
+         * Diferencias clave entre var y el uso explícito de tipos en Java:
+         * >Con var:
+         *      El tipo de la variable se determina automáticamente por el valor que se le
+         *  asigna. Es más compacto y mejora la legibilidad cuando el tipo es evidente a
+         *  partir del contexto.
+         * 
+         * >Sin var (tipo explícito):
+         *      Tienes que declarar explícitamente el tipo de la variable, lo que es más
+         *  detallado pero puede ser más largo. Sin embargo, algunos prefieren esta forma
+         *  porque hace que el tipo de la variable sea más claro de inmediato.
+         */
+        var peliculaDeBruno = new Pelicula("El señor de los anillos",2001);
         peliculaDeBruno.setDuracionEnMinutos(180);
-        peliculaDeBruno.setFechaDeLanzamiento(2001);
 
         ArrayList<Pelicula> listaDePeliculas = new ArrayList<>();
         listaDePeliculas.add(peliculaDeBruno);
@@ -65,5 +70,6 @@ public class Principal {
         System.out.println("La primera pelicula es: " + listaDePeliculas.get(0).getNombre());
 
         System.out.println(listaDePeliculas);
+
     }
 }

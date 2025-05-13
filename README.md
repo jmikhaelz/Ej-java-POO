@@ -47,6 +47,8 @@ java -cp bin Principal
 Ej-java-POO/
 │── src/                           # Código fuente
 │   ├── com/alura/screenmatch/     # Paquete raíz
+│   │   ├── herramientas/          # Manejo de Terminal
+│   │   │   ├── LimpiarConsola.java
 │   │   ├── calculos/              # Lógica de cálculos
 │   │   │   ├── CalculadoraDeTiempo.java
 │   │   │   ├── Clasificable.java
