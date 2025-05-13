@@ -71,7 +71,7 @@ Solo cambia el nombre de la clase:
 ```sh
 javac -d bin -sourcepath src src/com/alura/screenmatch/principal/PrincipalConListas.java
 
-java -</span><span>cp</span><span> bin com.alura.screenmatch.principal.PrincipalConListas</span></span></code></div></div></pre>
+java -cp bin com.alura.screenmatch.principal.PrincipalConListas
 ```
 
 ## 📂 Estructura del Proyecto
@@ -97,7 +97,9 @@ Ej-java-POO/
 ├── README.md                      # Documentación
 └── .gitignore                      # Archivos a ignorar en Git
 ```
+
 ---
+
 ## ✅ Funcionalidades del Proyecto
 
 - **Gestión de títulos (películas y series):** Se pueden crear, evaluar y calcular duración.
