@@ -94,6 +94,7 @@ Ej-java-POO/
 │   │   ├── principal/     # Clase de manejo sobre el entorno creado
 │   │   │   ├── Principal.java
 │   │   │   ├── PrincipalConListas.java
+│   │   │   ├── PrincipalConBusqueda.java
 ├── README.md                      # Documentación
 └── .gitignore                      # Archivos a ignorar en Git
 ```
