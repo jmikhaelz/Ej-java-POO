@@ -29,16 +29,49 @@ javac -version
 java -version
 ```
 
-### **3. Compilar el código fuente**
+## 🏃‍♂️ **3. Cómo ejecutar los archivos Java desde la carpeta `principal`**
+
+Supongamos que tu proyecto está organizado como lo mostraste y que quieres ejecutar `Principal.java`.
+
+### ✅ **1. Compilar el código fuente**
+
+Usa el comando:
 
 ```sh
-javac -d bin -sourcepath src src/Principal.java
+javac -d bin -sourcepath src src/com/alura/screenmatch/principal/Principal.java
 ```
 
-### **4. Ejecutar la aplicación**
+📌 Esto hace lo siguiente:
+
+* `-d bin`: guarda los `.class` compilados en la carpeta `bin`.
+* `-sourcepath src`: le dice al compilador dónde buscar las demás clases usadas en los paquetes.
+* `src/com/alura/screenmatch/principal/Principal.java`: es la clase principal que quieres compilar.
+
+---
+
+### ✅ **2. Ejecutar el programa**
+
+Una vez compilado, puedes ejecutarlo con:
 
 ```sh
-java -cp bin Principal
+java -cp bin com.alura.screenmatch.principal.Principal
+```
+
+📌 Esto significa:
+
+* `-cp bin`: usa `bin` como ruta donde están los `.class` ya compilados.
+* `com.alura.screenmatch.principal.Principal`: es el nombre **completo del paquete + clase** con el método `main`.
+
+---
+
+### 🧩 ¿Y si quieres ejecutar `PrincipalConListas.java`?
+
+Solo cambia el nombre de la clase:
+
+```sh
+javac -d bin -sourcepath src src/com/alura/screenmatch/principal/PrincipalConListas.java
+
+java -</span><span>cp</span><span> bin com.alura.screenmatch.principal.PrincipalConListas</span></span></code></div></div></pre>
 ```
 
 ## 📂 Estructura del Proyecto
@@ -58,11 +91,13 @@ Ej-java-POO/
 │   │   │   ├── Pelicula.java
 │   │   │   ├── Serie.java
 │   │   │   ├── Titulo.java
-│   ├── Principal.java             # Clase principal
+│   │   ├── principal/     # Clase de manejo sobre el entorno creado
+│   │   │   ├── Principal.java
+│   │   │   ├── PrincipalConListas.java
 ├── README.md                      # Documentación
 └── .gitignore                      # Archivos a ignorar en Git
 ```
-
+---
 ## ✅ Funcionalidades del Proyecto
 
 - **Gestión de títulos (películas y series):** Se pueden crear, evaluar y calcular duración.

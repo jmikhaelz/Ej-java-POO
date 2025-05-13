@@ -3,6 +3,7 @@ package com.alura.screenmatch.principal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 import com.alura.screenmatch.herramientas.LimpiarConsola;
 import com.alura.screenmatch.modelos.Pelicula;
@@ -23,7 +24,14 @@ public class PrincipalConListas {
         Serie lost = new Serie("Lost", 2000);
         lost.evalua(10);
 
-        ArrayList<Titulo> lista = new ArrayList<>();
+        /*
+         * Implementacion de List, para cambio de elemento de almacenamiento como:
+         * ArrayList
+         * LinkedList
+         * Vector
+         * Stack
+         */
+        List<Titulo> lista = new ArrayList<>();
         lista.add(peliculaDeBruno);
         lista.add(miPelicula);
         lista.add(otraPelicula);
@@ -61,13 +69,13 @@ public class PrincipalConListas {
         listaDeArtistas.add("Penélope Cruz");
         listaDeArtistas.add("Antonio Banderas");
         listaDeArtistas.add("Ricardo Darín");
-        
-        System.out.println("Lista No Ordenada:\n"+listaDeArtistas);
+
+        System.out.println("Lista No Ordenada:\n" + listaDeArtistas);
         Collections.sort(listaDeArtistas);
-        System.out.println("Lista Ordenada:\n"+listaDeArtistas);
+        System.out.println("Lista Ordenada:\n" + listaDeArtistas);
 
         Collections.sort(lista);
-        
+
         lista.sort(Comparator.comparing(Titulo::getFechaDeLanzamiento));
 
         System.out.println("\n\tTITULOS ORDENADOS");
@@ -75,7 +83,7 @@ public class PrincipalConListas {
             System.out.print("_");
         System.out.println("\n");
         for (Titulo item : lista) {
-            System.out.print("\n"+item);
+            System.out.print("\n" + item);
             /*
              * El operador *instanceof* se utiliza para verificar si un objeto es una
              * instancia de una clase específica o implementa una interfaz.
